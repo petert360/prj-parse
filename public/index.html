@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Törzsadat felvitel</title>
+</head>
+
+<body>
+    <h1>Törzsadat felvitel</h1>
+
+    <p>Másold be az ambuláns lap fejlécét:</p>
+    <textarea id="bemenet" rows="15" cols="80"></textarea>
+    <br>
+    <button id="feldolgoz">Feldolgozás</button>
+
+    <p id="uzenet"></p>
+
+    <h2>Kinyert adatok</h2>
+    <p>Név: <input id="name"></p>
+    <p>Születési név: <input id="birthName"></p>
+    <p>Születési hely: <input id="pob"></p>
+    <p>Születési idő: <input id="dob"></p>
+    <p>TAJ: <input id="taj"></p>
+    <p>Anyja neve: <input id="mothersName"></p>
+    <p>Vizsgálat ideje: <input id="docDate"></p>
+    <p>Lakcím: <input id="addr" size="50"></p>
+    <p>Beutaló diagnózis: <input id="dg0Text" size="50"></p>
+    <p>BNO kód: <input id="dg0ICD"></p>
+
+    <button id="mentes">Mentés</button>
+    <p id="mentesUzenet"></p>
+
+    <h2>Mentett betegek</h2>
+    <table border="1" cellpadding="5">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Név</th>
+                <th>TAJ</th>
+                <th>Születési idő</th>
+                <th>Vizsgálat ideje</th>
+                <th>BNO</th>
+            </tr>
+        </thead>
+        <tbody id="tablaTest"></tbody>
+    </table>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

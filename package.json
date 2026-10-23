@@ -1,0 +1,17 @@
+{
+  "name": "torzs-server",
+  "version": "1.0.0",
+  "description": "Törzsadat fogadó szerver (Express + SQLite)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "send": "node send.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "express": "^5.3.0"
+  }
+}
