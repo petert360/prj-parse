@@ -2,8 +2,13 @@
 <html lang="hu">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" name="color-scheme">
     <title>Törzsadat felvitel</title>
+    <style>
+    :root {
+        color-scheme: dark;
+    }
+</style>
 </head>
 
 <body>
@@ -12,7 +17,7 @@
     <p>Másold be az ambuláns lap fejlécét:</p>
     <textarea id="bemenet" rows="15" cols="80"></textarea>
     <br>
-    <button id="feldolgoz">Feldolgozás</button>
+    <button id="feldolgoz">Feldolgozás és mentés</button>
 
     <p id="uzenet"></p>
 
@@ -27,9 +32,6 @@
     <p>Lakcím: <input id="addr" size="50"></p>
     <p>Beutaló diagnózis: <input id="dg0Text" size="50"></p>
     <p>BNO kód: <input id="dg0ICD"></p>
-
-    <button id="mentes">Mentés</button>
-    <p id="mentesUzenet"></p>
 
     <h2>Mentett betegek</h2>
     <table border="1" cellpadding="5">

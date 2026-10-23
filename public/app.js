@@ -34,58 +34,31 @@ function parseTorzs(text) {
 
 // ---- Az oldal elemei ----
 
-const feldolgozGomb = document.getElementById('feldolgoz');
+const gombFeldolgoz = document.getElementById('feldolgoz');
 const bemenet = document.getElementById('bemenet');
 const uzenet = document.getElementById('uzenet');
+const tablaTest = document.getElementById('tablaTest');
 
-// ---- feldolgozGomb kattintás ----
+// ---- Feldolgozás és mentés egy lépésben ----
 
-feldolgozGomb.addEventListener('click', function () {
+gombFeldolgoz.addEventListener('click', async function () {
   const szoveg = bemenet.value;
 
-  // Ha üres a mező, szólunk, és kilépünk
+  // 1) Ha üres a mező, szólunk, és kilépünk
   if (szoveg.trim() === '') {
     uzenet.textContent = 'Előbb illessz be szöveget!';
     return;
   }
 
-  // 1) Feldolgozzuk a szöveget
-  const eredmeny = parseTorzs(szoveg);
+  // 2) Feldolgozzuk a szöveget
+  const adat = parseTorzs(szoveg);
 
-  // 2) Minden kinyert értéket beírunk a megfelelő mezőbe
-  //    (a kulcs neve megegyezik a mező id-jával)
-  for (const kulcs in eredmeny) {
-    document.getElementById(kulcs).value = eredmeny[kulcs];
+  // 3) A kinyert értékeket megjelenítjük a mezőkben (csak visszajelzésnek)
+  for (const kulcs in adat) {
+    document.getElementById(kulcs).value = adat[kulcs];
   }
 
-  // 3) Megnézzük, mely mezőket nem sikerült kinyerni
-  let hianyzok = '';
-  for (const kulcs in eredmeny) {
-    if (eredmeny[kulcs] === '') {
-      hianyzok = hianyzok + kulcs + ' ';
-    }
-  }
-
-  if (hianyzok === '') {
-    uzenet.textContent = 'Minden mező kitöltve.';
-  } else {
-    uzenet.textContent = 'Ezeket nem találtam: ' + hianyzok;
-  }
-});
-
-// ---- Mentés ----
-
-const mentesGomb = document.getElementById('mentes');
-const mentesUzenet = document.getElementById('mentesUzenet');
-
-mentesGomb.addEventListener('click', async function () {
-  // 1) Összegyűjtjük a mezők aktuális értékét egy objektumba
-  const adat = {};
-  for (const kulcs in RULES) {
-    adat[kulcs] = document.getElementById(kulcs).value;
-  }
-
-  // 2) Elküldjük a szervernek
+  // 4) Elküldjük a szervernek
   try {
     const valasz = await fetch('/api/torzs', {
       method: 'POST',
@@ -95,39 +68,45 @@ mentesGomb.addEventListener('click', async function () {
 
     const tartalom = await valasz.json();
 
-    // 3) A válasz státusza alapján üzenünk a felhasználónak
+    // 5) A válasz státusza alapján üzenünk
     if (valasz.status === 201) {
-      mentesUzenet.textContent = 'Sikeres mentés! Azonosító: ' + tartalom.id;
+      uzenet.textContent = 'Sikeres mentés: ' + adat.name + ' (azonosító: ' + tartalom.id + ')';
+
+      // Megnézzük, mely mezőket nem sikerült kinyerni
+      let hianyzok = '';
+      for (const kulcs in adat) {
+        if (adat[kulcs] === '') {
+          hianyzok = hianyzok + kulcs + ' ';
+        }
+      }
+      if (hianyzok !== '') {
+        uzenet.textContent = uzenet.textContent + ' | Üresen maradt: ' + hianyzok;
+      }
+
+      // Kiürítjük a beillesztő mezőt, hogy jöhet a következő
+      bemenet.value = '';
       listaBetoltes();
     } else {
       // 400 vagy 409: a szerver hibaüzenetét kiírjuk
-      mentesUzenet.textContent = 'Hiba: ' + tartalom.error;
+      uzenet.textContent = 'Hiba: ' + tartalom.error;
     }
   } catch (hiba) {
     // Ide akkor jutunk, ha a szerver el sem érhető
-    mentesUzenet.textContent = 'A szerver nem érhető el.';
+    uzenet.textContent = 'A szerver nem érhető el.';
   }
 });
 
 // ---- Lista ----
 
-const tablaTest = document.getElementById('tablaTest');
-
 async function listaBetoltes() {
-  // 1) Lekérjük az összes beteget a szervertől
   const valasz = await fetch('/api/torzs');
   const betegek = await valasz.json();
 
-  // 2) Kiürítjük a táblázat törzsét, hogy ne duplázódjanak a sorok
   tablaTest.innerHTML = '';
 
-  // 3) Minden beteghez készítünk egy sort
   for (let i = 0; i < betegek.length; i++) {
     const beteg = betegek[i];
-
     const sor = document.createElement('tr');
-
-    // Ezeket az oszlopokat írjuk ki, ebben a sorrendben
     const oszlopok = ['id', 'name', 'taj', 'dob', 'docDate', 'dg0ICD'];
 
     for (let j = 0; j < oszlopok.length; j++) {
