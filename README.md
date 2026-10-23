@@ -70,3 +70,28 @@ flowchart TD
     CTRL-A, CTRL-C]
     B -- nem --> D[???]
 ```
+
+ToDo:
+- a torzsadatban lébő dátum/ido ISO-ra!
+
+## Laborlelet-parser
+
+A [parseLabor.js](./parseLabor.js) a `Referencia értékek` táblázattól kezdve dolgozza fel a másolt laborleletet. Kimenetében csak a vizsgálati eredmények, megjegyzések és feldolgozási hibák szerepelnek; a beteg fejlécadatait nem olvassa ki és nem adja vissza.
+
+```sh
+node parseLabor.js lelet.txt
+```
+
+A parsert modulként is lehet használni:
+
+```js
+const fs = require('node:fs');
+const { parseLabor } = require('./parseLabor');
+
+const eredmeny = parseLabor(fs.readFileSync('lelet.txt', 'utf8'));
+if (!eredmeny.rendben) {
+  console.error(eredmeny.hibak, eredmeny.figyelmeztetesek);
+}
+```
+
+Az eredeti mérési szöveg (`ertekSzoveg`) megmarad, a numerikus érték (`ertek`) számként is szerepel; `<` vagy `>` reláció esetén az `ertek` `null`, hogy a határérték ne tűnjön pontos mérésnek. A `rendben` csak figyelmeztetés és hiba nélkül igaz, de nem jelent klinikai jóváhagyást: az eredményt használat előtt mindig ellenőrizd az eredeti leleten. A kilenc mintára futtatható tesztek: `npm test`.

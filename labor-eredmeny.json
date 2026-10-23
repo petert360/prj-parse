@@ -1,0 +1,380 @@
+{
+  "name": "Kutri Pál",
+  "taj": "104668441",
+  "sorszam": "2841 / 2026.03.04.",
+  "mintaIdo": "2026-03-04 10:37",
+  "ertekek": [
+    {
+      "vizsgalat": "Lipémia",
+      "ertek": "10",
+      "egyseg": "",
+      "refAlso": "",
+      "refFelso": "",
+      "jelzes": "",
+      "megjegyzes": ""
+    },
+    {
+      "vizsgalat": "Ikterusz",
+      "ertek": "26",
+      "egyseg": "µmol/l",
+      "refAlso": "",
+      "refFelso": "",
+      "jelzes": "",
+      "megjegyzes": ""
+    },
+    {
+      "vizsgalat": "Hemolízis",
+      "ertek": "3",
+      "egyseg": "µmol/l",
+      "refAlso": "",
+      "refFelso": "",
+      "jelzes": "",
+      "megjegyzes": ""
+    },
+    {
+      "vizsgalat": "Glukóz",
+      "ertek": "6,70",
+      "egyseg": "mmol/l",
+      "refAlso": "4,00",
+      "refFelso": "6,00",
+      "jelzes": "+",
+      "megjegyzes": "+ A referencia éhomi mintára vonatkozik."
+    },
+    {
+      "vizsgalat": "Karbamid",
+      "ertek": "8,1",
+      "egyseg": "mmol/l",
+      "refAlso": "2,9",
+      "refFelso": "8,2",
+      "jelzes": "",
+      "megjegyzes": ""
+    },
+    {
+      "vizsgalat": "Kreatinin Jaffé-módszerrel",
+      "ertek": "77",
+      "egyseg": "µmol/l",
+      "refAlso": "62",
+      "refFelso": "106",
+      "jelzes": "",
+      "megjegyzes": ""
+    },
+    {
+      "vizsgalat": "eGFR-EPI",
+      "ertek": "88",
+      "egyseg": "(ml/perc)/1,73 m2",
+      "refAlso": "90",
+      "refFelso": "9999",
+      "jelzes": "-",
+      "megjegyzes": ""
+    },
+    {
+      "vizsgalat": "Összfehérje",
+      "ertek": "81,3",
+      "egyseg": "g/l",
+      "refAlso": "66,0",
+      "refFelso": "87,0",
+      "jelzes": "",
+      "megjegyzes": ""
+    },
+    {
+      "vizsgalat": "GOT piridoxál-foszfát aktiváció nélkül",
+      "ertek": "26",
+      "egyseg": "U/l",
+      "refAlso": "0",
+      "refFelso": "40",
+      "jelzes": "",
+      "megjegyzes": ""
+    },
+    {
+      "vizsgalat": "GPT piridoxál-foszfát aktiváció nélkül",
+      "ertek": "33",
+      "egyseg": "U/l",
+      "refAlso": "0",
+      "refFelso": "41",
+      "jelzes": "",
+      "megjegyzes": ""
+    },
+    {
+      "vizsgalat": "Gamma-glutamil-transzferáz",
+      "ertek": "31",
+      "egyseg": "U/l",
+      "refAlso": "0",
+      "refFelso": "60",
+      "jelzes": "",
+      "megjegyzes": ""
+    },
+    {
+      "vizsgalat": "Alkalikus foszfatáz",
+      "ertek": "120",
+      "egyseg": "U/l",
+      "refAlso": "40",
+      "refFelso": "129",
+      "jelzes": "",
+      "megjegyzes": ""
+    },
+    {
+      "vizsgalat": "Nátrium",
+      "ertek": "138",
+      "egyseg": "mmol/l",
+      "refAlso": "136",
+      "refFelso": "145",
+      "jelzes": "",
+      "megjegyzes": ""
+    },
+    {
+      "vizsgalat": "Kálium",
+      "ertek": "3,91",
+      "egyseg": "mmol/l",
+      "refAlso": "3,50",
+      "refFelso": "5,10",
+      "jelzes": "",
+      "megjegyzes": ""
+    },
+    {
+      "vizsgalat": "C reaktív fehérje",
+      "ertek": "<0.60",
+      "egyseg": "mg/l",
+      "refAlso": "0,00",
+      "refFelso": "8,60",
+      "jelzes": "",
+      "megjegyzes": ""
+    },
+    {
+      "vizsgalat": "Fehérvérsejtszám",
+      "ertek": "7,50",
+      "egyseg": "G/l",
+      "refAlso": "4,40",
+      "refFelso": "11,30",
+      "jelzes": "",
+      "megjegyzes": ""
+    },
+    {
+      "vizsgalat": "Neutrofil",
+      "ertek": "60,500",
+      "egyseg": "%",
+      "refAlso": "",
+      "refFelso": "",
+      "jelzes": "",
+      "megjegyzes": ""
+    },
+    {
+      "vizsgalat": "Lymfocita",
+      "ertek": "28,300",
+      "egyseg": "%",
+      "refAlso": "",
+      "refFelso": "",
+      "jelzes": "",
+      "megjegyzes": ""
+    },
+    {
+      "vizsgalat": "Kutri Pál",
+      "ertek": "2841",
+      "egyseg": "/ 2026.03.04.",
+      "refAlso": "",
+      "refFelso": "",
+      "jelzes": "",
+      "megjegyzes": "2 Nyomtatva:2026.03.04. 14:26 Monocyta 10,000 %"
+    },
+    {
+      "vizsgalat": "Eosinofil",
+      "ertek": "0,500",
+      "egyseg": "%",
+      "refAlso": "",
+      "refFelso": "",
+      "jelzes": "",
+      "megjegyzes": ""
+    },
+    {
+      "vizsgalat": "Basofil",
+      "ertek": "0,700",
+      "egyseg": "%",
+      "refAlso": "",
+      "refFelso": "",
+      "jelzes": "",
+      "megjegyzes": ""
+    },
+    {
+      "vizsgalat": "Neutrofil abszolút értéke",
+      "ertek": "4,540",
+      "egyseg": "G/l",
+      "refAlso": "1,800",
+      "refFelso": "6,980",
+      "jelzes": "",
+      "megjegyzes": ""
+    },
+    {
+      "vizsgalat": "Lymfocita abszolút értéke",
+      "ertek": "2,120",
+      "egyseg": "G/l",
+      "refAlso": "1,000",
+      "refFelso": "4,800",
+      "jelzes": "",
+      "megjegyzes": ""
+    },
+    {
+      "vizsgalat": "Monocyta abszolút értéke",
+      "ertek": "0,750",
+      "egyseg": "G/l",
+      "refAlso": "0,000",
+      "refFelso": "0,800",
+      "jelzes": "",
+      "megjegyzes": ""
+    },
+    {
+      "vizsgalat": "Eosinofil abszolút értéke",
+      "ertek": "0,040",
+      "egyseg": "G/l",
+      "refAlso": "0,000",
+      "refFelso": "0,450",
+      "jelzes": "",
+      "megjegyzes": ""
+    },
+    {
+      "vizsgalat": "Basofil abszolút értéke",
+      "ertek": "0,050",
+      "egyseg": "G/l",
+      "refAlso": "0,000",
+      "refFelso": "0,200",
+      "jelzes": "",
+      "megjegyzes": ""
+    },
+    {
+      "vizsgalat": "Vörösvértest",
+      "ertek": "5,38",
+      "egyseg": "T/l",
+      "refAlso": "4,50",
+      "refFelso": "5,90",
+      "jelzes": "",
+      "megjegyzes": ""
+    },
+    {
+      "vizsgalat": "Haemoglobin",
+      "ertek": "154",
+      "egyseg": "g/l",
+      "refAlso": "135",
+      "refFelso": "175",
+      "jelzes": "",
+      "megjegyzes": ""
+    },
+    {
+      "vizsgalat": "Hematokrit",
+      "ertek": "0,432",
+      "egyseg": "L/l",
+      "refAlso": "0,360",
+      "refFelso": "0,482",
+      "jelzes": "",
+      "megjegyzes": ""
+    },
+    {
+      "vizsgalat": "MCV",
+      "ertek": "80,3",
+      "egyseg": "fl",
+      "refAlso": "80,0",
+      "refFelso": "96,0",
+      "jelzes": "",
+      "megjegyzes": ""
+    },
+    {
+      "vizsgalat": "Mentzer index",
+      "ertek": "14,93",
+      "egyseg": "",
+      "refAlso": "",
+      "refFelso": "",
+      "jelzes": "",
+      "megjegyzes": ""
+    },
+    {
+      "vizsgalat": "MCH",
+      "ertek": "28,6",
+      "egyseg": "pg",
+      "refAlso": "28,0",
+      "refFelso": "33,0",
+      "jelzes": "",
+      "megjegyzes": ""
+    },
+    {
+      "vizsgalat": "MCHC (átl. Hgb koncentráció)",
+      "ertek": "356",
+      "egyseg": "g/l",
+      "refAlso": "330",
+      "refFelso": "360",
+      "jelzes": "",
+      "megjegyzes": ""
+    },
+    {
+      "vizsgalat": "Trombocita",
+      "ertek": "254",
+      "egyseg": "G/l",
+      "refAlso": "150",
+      "refFelso": "400",
+      "jelzes": "",
+      "megjegyzes": ""
+    },
+    {
+      "vizsgalat": "MPV (átlagos trombocyta térfogat)",
+      "ertek": "10,9",
+      "egyseg": "fl",
+      "refAlso": "9,3",
+      "refFelso": "12,1",
+      "jelzes": "",
+      "megjegyzes": ""
+    },
+    {
+      "vizsgalat": "RDW (vvt eloszl. görbe szélessége)",
+      "ertek": "13,0",
+      "egyseg": "%",
+      "refAlso": "12,0",
+      "refFelso": "15,0",
+      "jelzes": "",
+      "megjegyzes": ""
+    },
+    {
+      "vizsgalat": "Véralvadás K-vitamin antagonista Nem (Syncumar, Warfarin, Marfarin) Heparin Nem DOAC Nem INR",
+      "ertek": "0,93",
+      "egyseg": "Csak a K-",
+      "refAlso": "0,85",
+      "refFelso": "1,15",
+      "jelzes": "",
+      "megjegyzes": "vitamin antagonisták monitorozására alkalmas érték."
+    },
+    {
+      "vizsgalat": "Prothrombin-idő",
+      "ertek": "8,1",
+      "egyseg": "sec",
+      "refAlso": "7,5",
+      "refFelso": "10,3",
+      "jelzes": "",
+      "megjegyzes": ""
+    },
+    {
+      "vizsgalat": "Aktivált parciális thromboplasztin idő",
+      "ertek": "28,9",
+      "egyseg": "sec",
+      "refAlso": "26,0",
+      "refFelso": "36,0",
+      "jelzes": "",
+      "megjegyzes": ""
+    },
+    {
+      "vizsgalat": "Thrombin idő meghat.",
+      "ertek": "18,9",
+      "egyseg": "sec",
+      "refAlso": "14,0",
+      "refFelso": "23,0",
+      "jelzes": "",
+      "megjegyzes": ""
+    },
+    {
+      "vizsgalat": "Vizelet leukocyta negatív Vizelet nitrit negatív Vizelet pH",
+      "ertek": "6,0",
+      "egyseg": "",
+      "refAlso": "4,8",
+      "refFelso": "7,4",
+      "jelzes": "",
+      "megjegyzes": ""
+    }
+  ],
+  "hibak": [
+    "Feldolgozatlan maradék: Vizelet erytrocyta negatív Megjegyzés Vörösvértest jelenléte mellett hemoglobin és/vagy mioglobin is eredményezhet pozitív reakciót. Vizelet fehérje negatív Vizelet cukor negatív Vizelet keton negatív Vizelet urobilinogén normális Vizelet bilirubin negatív Budapest, 2026. március 04. Validálta: Dr. Méri Anna (A dokumentumot a MedWorkS rendszerben rögzítette: Dr. Méri Anna O40828 ) A laboratóriumi vizsgálatokról a www.laborlelet.hu lakossági honlapon bővebb információkhoz juthat. A honlap információi tájékoztató jellegűek, nem helyettesítik a személyes orvosi konzultációt. Laboreredményeivel mindig forduljon orvosához!"
+  ]
+}
