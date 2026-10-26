@@ -1,5 +1,6 @@
 const express = require('express');
 const Database = require('better-sqlite3');
+const { parseReport } = require('./parser2');
 
 const app = express();
 app.use(express.json());
@@ -65,7 +66,9 @@ app.post('/api/torzs', (req, res) => {
   } catch (err) {
     // Ha ez a TAJ már szerepel az adatbázisban
     if (err.code === 'SQLITE_CONSTRAINT_UNIQUE') {
-      return res.status(409).json({ error: 'Ilyen TAJ-jal már van beteg az adatbázisban' });
+      return res
+        .status(409)
+        .json({ error: 'Ilyen TAJ-jal már van beteg az adatbázisban' });
     }
     throw err;
   }
@@ -86,6 +89,23 @@ app.get('/api/torzs/:id', (req, res) => {
   }
 
   res.json(row);
+});
+
+// 4) Labor lelet feldolgozása (még nem ment adatbázisba, csak visszaadja az eredményt)
+app.post('/api/labor', (req, res) => {
+  const szoveg = req.body.text;
+
+  if (!szoveg) {
+    return res.status(400).json({ error: 'Nincs szöveg' });
+  }
+
+  try {
+    const eredmeny = parseReport(szoveg);
+    res.json(eredmeny);
+  } catch (err) {
+    // A parseReport hibát dob, ha nem laborlelet a szöveg
+    res.status(400).json({ error: err.message });
+  }
 });
 
 // Indítás: csak erről a gépről érhető el (127.0.0.1)

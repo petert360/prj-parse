@@ -70,7 +70,8 @@ gombFeldolgoz.addEventListener('click', async function () {
 
     // 5) A válasz státusza alapján üzenünk
     if (valasz.status === 201) {
-      uzenet.textContent = 'Sikeres mentés: ' + adat.name + ' (azonosító: ' + tartalom.id + ')';
+      uzenet.textContent =
+        'Sikeres mentés: ' + adat.name + ' (azonosító: ' + tartalom.id + ')';
 
       // Megnézzük, mely mezőket nem sikerült kinyerni
       let hianyzok = '';
@@ -80,7 +81,8 @@ gombFeldolgoz.addEventListener('click', async function () {
         }
       }
       if (hianyzok !== '') {
-        uzenet.textContent = uzenet.textContent + ' | Üresen maradt: ' + hianyzok;
+        uzenet.textContent =
+          uzenet.textContent + ' | Üresen maradt: ' + hianyzok;
       }
 
       // Kiürítjük a beillesztő mezőt, hogy jöhet a következő
@@ -121,3 +123,85 @@ async function listaBetoltes() {
 
 // Az oldal betöltésekor egyből megjelenítjük a listát
 listaBetoltes();
+
+// ---- Labor lelet ----
+
+const laborGomb = document.getElementById('laborGomb');
+const laborBemenet = document.getElementById('laborBemenet');
+const laborUzenet = document.getElementById('laborUzenet');
+const laborTest = document.getElementById('laborTest');
+const laborFigyelmeztetesek = document.getElementById('laborFigyelmeztetesek');
+
+laborGomb.addEventListener('click', async function () {
+  const szoveg = laborBemenet.value;
+
+  // 1) Üres mező ellenőrzése
+  if (szoveg.trim() === '') {
+    laborUzenet.textContent = 'Előbb illessz be szöveget!';
+    return;
+  }
+
+  try {
+    // 2) Elküldjük a szervernek feldolgozásra
+    const valasz = await fetch('/api/labor', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ text: szoveg }),
+    });
+
+    const tartalom = await valasz.json();
+
+    // 3) Hiba esetén kiírjuk az üzenetet
+    if (valasz.status !== 200) {
+      laborUzenet.textContent = 'Hiba: ' + tartalom.error;
+      return;
+    }
+
+    laborUzenet.textContent = tartalom.results.length + ' eredmény felismerve.';
+
+    // 4) Az eredmények táblázatba írása
+    laborTest.innerHTML = '';
+
+    for (let i = 0; i < tartalom.results.length; i++) {
+      const eredmeny = tartalom.results[i];
+      const sor = document.createElement('tr');
+
+      // A referencia vagy null, vagy { low, high }
+      let referencia = '';
+      if (eredmeny.reference !== null) {
+        referencia = eredmeny.reference.low + ' – ' + eredmeny.reference.high;
+      }
+
+      // Ami null, az üres cellaként jelenjen meg
+      const unit = eredmeny.unit || '';
+      const flag = eredmeny.flag || '';
+
+      const cellak = [eredmeny.name, eredmeny.value, unit, flag, referencia];
+
+      for (let j = 0; j < cellak.length; j++) {
+        const cella = document.createElement('td');
+        cella.textContent = cellak[j];
+        sor.appendChild(cella);
+      }
+
+      laborTest.appendChild(sor);
+    }
+
+    // 5) A figyelmeztetések kiírása
+    laborFigyelmeztetesek.innerHTML = '';
+
+    for (let i = 0; i < tartalom.warnings.length; i++) {
+      const figyelmeztetes = tartalom.warnings[i];
+      const elem = document.createElement('li');
+      elem.textContent =
+        figyelmeztetes.line +
+        '. sor – ' +
+        figyelmeztetes.analyte +
+        ': ' +
+        figyelmeztetes.message;
+      laborFigyelmeztetesek.appendChild(elem);
+    }
+  } catch (hiba) {
+    laborUzenet.textContent = 'A szerver nem érhető el.';
+  }
+});

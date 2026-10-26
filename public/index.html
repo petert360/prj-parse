@@ -5,10 +5,10 @@
     <meta charset="UTF-8" name="color-scheme">
     <title>Törzsadat felvitel</title>
     <style>
-    :root {
-        color-scheme: dark;
-    }
-</style>
+        :root {
+            color-scheme: dark;
+        }
+    </style>
 </head>
 
 <body>
@@ -47,6 +47,34 @@
         </thead>
         <tbody id="tablaTest"></tbody>
     </table>
+
+    <hr>
+    <h1>Labor lelet</h1>
+
+    <p>Másold be a laborlelet szövegét:</p>
+    <textarea id="laborBemenet" rows="15" cols="80"></textarea>
+    <br>
+    <button id="laborGomb">Labor feldolgozása</button>
+
+    <p id="laborUzenet"></p>
+
+    <h2>Figyelmeztetések</h2>
+    <ul id="laborFigyelmeztetesek"></ul>
+
+    <h2>Eredmények</h2>
+    <table border="1" cellpadding="5">
+        <thead>
+            <tr>
+                <th>Vizsgálat</th>
+                <th>Érték</th>
+                <th>Egység</th>
+                <th>Jelzés</th>
+                <th>Referencia</th>
+            </tr>
+        </thead>
+        <tbody id="laborTest"></tbody>
+    </table>F
+
 
     <script src="app.js"></script>
 </body>
